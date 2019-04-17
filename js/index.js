@@ -68,15 +68,19 @@ function setBubblePlot(chosenCity) {
 // creating layout for the the plot with yaxis and y axis2 that will be overlaping
     var layout = {
       title: 'Actual Vs Forecast Temperature per City<br>'+ chosenCity + ' Temp',
-      yaxis: {title: 'Forecast Temperature'},
+      yaxis: {title: 'Temperature (F)'},
       yaxis2: {
         title: 'yaxis2 title',
         titlefont: {color: 'rgb(148, 103, 189)'},
         tickfont: {color: 'rgb(148, 103, 189)'},
         overlaying: 'y',
         side: 'right'
-      }
-      
+      },
+      xaxis: {
+        tickfont: {
+          family: 'calibri',
+          size: 12,
+          color: 'black'}}      
     };
 // creating the plot using avobe defined variables
     Plotly.newPlot('plotdiv', data, layout, {showSendToCloud: true});
